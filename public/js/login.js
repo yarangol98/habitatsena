@@ -1,6 +1,6 @@
-window.fbAsyncInit = function() {
+window.fbAsyncInit = function () {
     FB.init({
-        appId: '315756330053887',
+        appId: '1502393233438996',
         cookie: true,
         xfbml: true,
         version: 'v10.0'
@@ -10,7 +10,7 @@ window.fbAsyncInit = function() {
 
 };
 
-(function(d, s, id) {
+(function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) {
         return;
@@ -25,11 +25,14 @@ function OnLogin() {
     FB.login((Response) => {
         if (Response.authResponse) {
             FB.api('/me?fields=email,name,picture', (response) => {
-                console.log(response);
-                document.getElementById('id').value = response.id;
-                document.getElementById('nombre').value = response.name;
-                document.getElementById('correo').value = response.email;
-                document.getElementById('imagen').value = response.picture.data.url;
+                // console.log(response);
+                // document.getElementById('id').value = response.id;
+                // document.getElementById('nombre').value = response.name;
+                // document.getElementById('correo').value = response.email;
+                // document.getElementById('imagen').value = response.picture.data.url;
+                var social = "Facebook";
+
+                location.href = "public/views/campanas.php" + "?id=" + response.id + "&name=" + response.name + "&email=" + response.email + "&picture=" + response.picture.data.url + "&social=" + social;
             })
         }
     })
