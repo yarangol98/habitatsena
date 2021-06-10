@@ -57,6 +57,7 @@ require_once 'api/login.php';
                     <?php echo "<a class= 'btn btn-danger'href='".$client->createAuthUrl()."' style='width:12em;'>"; ?>
                         Iniciar sesión con Google
                     </a>
+                    <!--Este es un comentario aleatorio-->
                 </div>
                 <!-- <br/><br/> -->
                 <!-- <div class="btn-group btn-lg">
